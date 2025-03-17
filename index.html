@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/b5d80d40a4.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+    </style>
+    <title>English Janala</title>
+</head>
+
+<body>
+    <header>
+        <nav class="bg-[#ebedf3] border-b-2 border-[#E0E7FF] hidden fixed top-0 left-0 w-full z-50" id="navbar" >
+            <div class="flex justify-between w-11/12 mx-auto py-2">
+                <div class="">
+                    <p class="flex items-center font-bold text-2xl">English <img src="./assets/logo.png" alt=""> জানালা
+                    </p>
+                </div>
+                <div class=" flex gap-3">
+                    <button class="btn btn-outline btn-primary" id="faq-btn" >
+                        <i class="fa-solid fa-circle-question"> FAQ</i>
+
+                    </button>
+                    <button class="btn btn-outline btn-primary"onclick="location.href='#mainpart'" id="learn-btn" >
+                        <i class="fa-solid fa-book-open"> Learn</i>
+
+                    </button>
+                    <button onclick="" class="btn btn-outline btn-primary" id="logout-btn" >
+                        <i class="fa-solid fa-arrow-right-from-bracket"  > Logout</i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero flex justify-between gap-4 w-11/12 mx-auto items-center "id="hero">
+            <div class="left">
+                <h1 class="font-bold text-5xl mb-2"><span class="text-[#00BCFF] ">English</span> is Easy!!</h1>
+                <p class="text-[#62748E] text-[20px]">
+                    আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br>
+                    আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+                    অন্য একটি Level এ
+                </p>
+                <br>
+                <form class="form">
+                    <div class="">
+                        <label class="input validator">
+                            <input type="input" placeholder="Enter your name" class="" id="Username" />
+                        </label>
+
+                    </div>
+                    <br>
+                    <div class="">
+                        <label class="input validator">
+                            <input id="Pass" type="password" placeholder="123456" minlength="6"
+                                pattern="\d{6}" />
+                        </label>
+
+                    </div>
+                    <div class="">
+                        <br>
+                        <button onclick="loginAccess(event)" class="btn btn-active btn-primary">Get Started</button>
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <img src="./assets/hero-student.png" alt="">
+            </div>
+        </div>
+    </header>
+
+
+
+    <main class="hidden come" id="mainpart" >
+        <div class="flex justify-center pt-4">
+            <div class="">
+                <h1 id="" class="font-bold text-3xl mb-2 flex justify-center mt-20"><span class="text-[#00BCFF] animate-pulse font-bold">Let's </span>Learn
+                    Vocabularies</h1>
+                <br>
+                <!-- dynamic vocabulary button -->
+                <div id="voca-btn-container" class="flex gap-3 items-center justify-center mt-5">
+
+                </div>
+                <!-- dynamic lesson -->
+                <div id="voca-lesson-container" class="grid grid-cols-3 gap-4 bg-gray-50 rounded-2xl px-3 py-4 ">
+
+                </div>
+                <div id="no-lesson" class="bg-gray-50 text-center py-32 rounded-2xl grid gap-3">
+                    <p class="text-2xl text-[#62748E]">আপনি এখনো কোন Lesson Select করেন নি।</p>
+                    <h1 class="text-4xl">একটি Lesson Select করুন।</h1>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ -->
+        <section id="faq" class=" mt-40">
+            <div class="mb-10">
+                <h1 class="text-3xl font-bold text-center"><span class="text-[#00BCFF] animate-pulse">Frequently</span> Asked
+                    Questions
+                </h1>
+            </div>
+            <!-- question and ans -->
+            <div class="grid gap-3 z-10 w-11/12 mx-auto text-center">
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="faq-accordion" checked="checked" />
+                    <div class="collapse-title font-semibold">Differences Between `var`, `let`, and `const`</div>
+                    <div class="collapse-content text-sm">
+                        ✅ `var`: Can be updated and redeclared. <br>
+                        ✅ `let`: Can be updated but not redeclared. <br>
+                        ✅ `const`: Cannot be updated or redeclared.
+                    </div>
+                </div>
+            
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="faq-accordion" />
+                    <div class="collapse-title font-semibold">Comparing `map()`, `forEach()`, and `filter()`</div>
+                    <div class="collapse-content text-sm">
+                        ✅ `map()`: Returns a new array with modified values. <br>
+                        ✅ `forEach()`: Iterates over elements but does not return anything. <br>
+                        ✅ `filter()`: Creates a new array with elements that meet a condition.
+                    </div>
+                </div>
+            
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="faq-accordion" />
+                    <div class="collapse-title font-semibold">Arrow Functions vs. Regular Functions</div>
+                    <div class="collapse-content text-sm">
+                        Arrow functions provide a concise syntax and inherit `this` from their surrounding scope. 
+                        Regular functions have their own `this`, can be used as constructors, and support the `arguments` object.
+                    </div>
+                </div>
+            
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="faq-accordion" />
+                    <div class="collapse-title font-semibold">How JavaScript Promises Work</div>
+                    <div class="collapse-content text-sm">
+                        JavaScript Promises handle asynchronous operations, representing success or failure. 
+                        They enable chaining with `.then()` for success and `.catch()` for error handling.
+                    </div>
+                </div>
+            
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="faq-accordion" />
+                    <div class="collapse-title font-semibold">How Do Closures Work in JavaScript?</div>
+                    <div class="collapse-content text-sm">
+                        Closures allow functions to access variables from their outer scope even after the outer function has finished executing.
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <dialog id="word_details" class="modal">
+        </dialog>
+    </main>
+
+
+    <footer id="footer" class="hidden mt-8 border-[#FFEBEB] border-t-3">
+        <div class="container mx-auto flex justify-between py-20">
+            <div class="grid gap-3">
+                <p class="flex items-center font-bold text-2xl">English <img src="./assets/logo.png" alt=""> জানালা</p>
+                <p class="text-black flex items-center font-bold">ইংরেজি শিখুন সহজে</p>
+                <p class="text-sm text-gray-500">Providing ED-Tech Applications since 2025</p>
+            </div>
+
+            <div class="flex flex-col justify-end">
+                <h6 class="footer-title text-sm">Follow Us</h6>
+                <div class="flex gap-4">    
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-linkedin"></i>                    
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
